@@ -9,7 +9,6 @@
 #import "NSData+BTCData.h"
 #import "NS+BTCBase58.h"
 
-#include <CommonCrypto/CommonCrypto.h>
 #include <openssl/ec.h>
 #include <openssl/ecdsa.h>
 #include <openssl/evp.h>

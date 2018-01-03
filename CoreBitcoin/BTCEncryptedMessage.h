@@ -9,12 +9,17 @@
 @interface BTCEncryptedMessage : NSObject
 
 // When encrypting, sender's keypair must contain a private key.
-@property(nonatomic) BTCKey* senderKey;
+@property(nonatomic) BTCKey * senderKey;
+@property(nonatomic) NSData * senderKeyData;
 
 // When decrypting, recipient's keypair must contain a private key.
-@property(nonatomic) BTCKey* recipientKey;
+@property(nonatomic) BTCKey * recipientKey;
+@property(nonatomic) NSData * recipientKeyData;
 
 - (NSData*) encrypt:(NSData*)plaintext;
+- (NSData*) encrypt:(NSData*)plaintext shortkEkm:(BOOL)useSHortkEkm usePubKey:(BOOL)usePubKey;
+
 - (NSData*) decrypt:(NSData*)ciphertext;
+- (NSData*) decrypt:(NSData*)ciphertext shortkEkm:(BOOL)useSHortkEkm usePubKey:(BOOL)usePubKey;
 
 @end
